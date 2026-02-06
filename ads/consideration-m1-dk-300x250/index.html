@@ -107,17 +107,17 @@
 
     /* Text Positions */
     #frame1-text1 {
-      top: 135px;
+      top: 130px;
       left: 18px;
     }
 
     #frame1-text2 {
-      top: 168px;
+      top: 155px;
       left: 54px;
     }
 
     #frame1-text3 {
-      top: 192px;
+      top: 180px;
       left: 36px;
     }
 
@@ -126,7 +126,7 @@
     }
 
     #frame1-hashtag {
-      top: 230px;
+      bottom: 22px;
       left: 18px;
       font-size: 11px;
     }
@@ -153,11 +153,11 @@
     #frame3-headline {
       top: 120px;
       left: 112px;
-      font-size: 22px;
+      font-size: 20px;
     }
 
     #frame3-copy {
-      top: 170px;
+      top: 165px;
       left: 112px;
       font-size: 11px;
       max-width: 180px;
@@ -165,8 +165,8 @@
     }
 
     #frame3-cta {
-      bottom: 8px;
-      right: 8px;
+      bottom: 18px;
+      right: 18px;
     }
 
     /* Mask - Full Height, covers from top */
@@ -223,7 +223,7 @@
       <div id="frame3-product">
         <img src="images/UGN.jpg">
       </div>
-      <div id="frame3-headline" class="frame-text">Stekeovnen iQ700</div>
+      <div id="frame3-headline" class="frame-text">Stekeovnen<br>iQ700</div>
       <div id="frame3-copy" class="frame-text">
         gjenkjenner og finjusterer<br>opptil 100 ulike matretter.
       </div>
@@ -274,7 +274,7 @@
     gsap.set(mask, { y: -250 });
 
     // Init Text
-    gsap.set([...frame1Texts, ...frame3Texts], { opacity: 0, y: 30 });
+    gsap.set([...frame1Texts, ...frame3Texts], { opacity: 0 });
 
     // Frame 3 slide image starts off top
     gsap.set(frame3SlideImg, { y: -250 });
@@ -294,7 +294,7 @@
       .to(frame1Texts, { duration: 0.4, opacity: 0 }) // Fade out S1 text
       .to(mask, { duration: 1.2, y: 0 }) // Mask covers full frame
       .to(frame1Img, { duration: 1.2, y: 250 }, "<") // S1 image slieds away
-      .to(logo, { duration: 0.2, opacity: 0 }, "<+=0.8") // Hide logo when mask covers
+      .to(logo, { duration: 0.2, opacity: 0 }, "<+=0.3") // Hide logo when mask covers
 
       // Switch to Frame 3 (hidden behind mask)
       .add(() => {
