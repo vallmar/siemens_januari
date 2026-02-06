@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <style>
+        @font-face {
+            font-family: 'Siemens Progress2';
+            src: url('./SiemensProgress-Regular.woff2') format('woff');
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: 'Siemens Sans';
+            src: url('./SiemensSans-Roman.woff') format('woff');
+            font-weight: normal;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="ad.size" content="width=970,height=250">
+    <title>consideration-m1-dk-970x250</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Siemens Progress2';
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #fff;
+        }
+
+        /* Banner container */
+        #banner {
+            position: relative;
+            width: 970px;
+            height: 250px;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid #333;
+        }
+
+        /* Frame Styles */
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        .frame img {
+            position: absolute;
+            height: 270px;
+            width: auto;
+            object-fit: contain;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Frame 1: Image Right */
+        #frame1 img {
+            right: 0;
+        }
+
+        /* Frame 2: Image Center */
+        #frame2 img {
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.1, .9);
+        }
+
+        /* Frame 3: Image Left edge at Center */
+        #frame3 img {
+            left: 50%;
+            transform: translateY(-50%);
+            z-index: 15;
+        }
+
+
+        /* Text Layouts */
+        .frame-text {
+            position: absolute;
+            font-family: 'Siemens Progress2';
+            opacity: 0;
+            font-weight: 100;
+            transform: translateX(-50px);
+            z-index: 15;
+            color: #fff;
+            font-size: 45px;
+        }
+
+        #frame3 .frame-text {
+            color: #000028;
+            /* Dark on Turquoise */
+        }
+
+        .cta-button {
+            position: absolute;
+            padding: 6px 20px;
+            font-size: 18px;
+            border: none;
+            text-align: center;
+            opacity: 0;
+            transform: translateX(-50px);
+            z-index: 15;
+            text-decoration: none;
+            font-family: 'Siemens Sans';
+            font-weight: bold;
+        }
+
+        .cta-button-dark {
+            background-color: #000028;
+            color: #ffffff;
+        }
+
+        /* Text Positions */
+        #frame1-text1,
+        #frame2-text1 {
+            top: 20px;
+            left: 20px;
+        }
+
+        #frame1-text2,
+        #frame2-text2 {
+            top: 80px;
+            left: 170px;
+        }
+
+        #frame1-text3,
+        #frame2-text3 {
+            top: 130px;
+            left: 60px;
+        }
+
+        .turqiose-siemens {
+            color: #3CC8BE;
+
+        }
+
+        #frame1-hashtag,
+        #frame2-hashtag {
+            top: 210px;
+            left: 20px;
+            font-size: 26px;
+        }
+
+        /* Frame 3 */
+        #frame3-product {
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            z-index: 20;
+            width: 130px;
+        }
+
+        #frame3-product img {
+            height: auto;
+            width: 100%;
+            position: relative;
+            top: 0;
+            transform: none;
+            left: 0;
+            z-index: 15;
+        }
+
+        #frame3-headline {
+            top: 40px;
+            left: 200px;
+            font-size: 28px;
+        }
+
+        #frame3-copy {
+            top: 80px;
+            left: 200px;
+            font-size: 24px;
+            max-width: 250px;
+            line-height: 28px;
+        }
+
+        #frame3-cta {
+            bottom: 30px;
+            left: 200px;
+        }
+
+        /* Masks */
+        #mask {
+            position: absolute;
+            top: 0;
+            width: 970px;
+            height: 100%;
+            background: #3CC8BE;
+            z-index: 10;
+            transform: translateX(100%);
+            /* Start Right Offscreen */
+        }
+
+        /* Logo - Top Right */
+        #logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 20;
+            display: flex;
+        }
+
+        #logo-white {
+            color: white;
+            display: flex;
+            height: 25px;
+        }
+    </style>
+    <script>
+        var clickTag = "https://www.siemens-home.bsh-group.com/dk/";
+    </script>
+</head>
+
+<body>
+    <div id="banner" onclick="window.open(clickTag, '_blank');">
+        <!-- Frame 1 -->
+        <div class="frame" id="frame1">
+            <img src="images/slide1-oven970x250.jpg" alt="Slide 1">
+            <div id="frame1-text1" class="frame-text text-line2">Intelligent.</div>
+            <div id="frame1-text2" class="frame-text text-line2">Precise.</div>
+            <div id="frame1-text3" class="frame-text text-line3">
+                <span class="turqiose-siemens">iQ700 ovn</span>
+            </div>
+            <div id="frame1-hashtag" class="frame-text text-line1">#IntelligenceThatDelights</div>
+        </div>
+
+        <!-- Frame 2 -->
+        <div class="frame" id="frame2">
+            <img src="images/slide2-oven970x250.jpg" alt="Slide 2">
+            <div id="frame2-text1" class="frame-text text-line2">Intelligent.</div>
+            <div id="frame2-text2" class="frame-text text-line2">Precise.</div>
+            <div id="frame2-text3" class="frame-text text-line3">
+                <span class="turqiose-siemens">iQ700
+                    ovn</span>
+            </div>
+            <div id="frame2-hashtag" class="frame-text text-line1">#IntelligenceThatDelights</div>
+        </div>
+
+        <!-- Frame 3 -->
+        <div class="frame" id="frame3">
+            <img src="images/slide3-right.jpg" id="img3" alt="Slide 3">
+            <div id="frame3-product">
+                <img src="images/UGN.jpg">
+            </div>
+            <div id="frame3-headline" class="frame-text">iQ700 ovn</div>
+            <div id="frame3-copy" class="frame-text">
+                registrerer og tilbereder<br>op til 100 retter perfekt.
+            </div>
+            <a href="#" id="frame3-cta" class="cta-button cta-button-dark">Shop nu</a>
+        </div>
+
+        <!-- Logo -->
+        <div id="logo">
+            <div id="logo-white"><img height="25" src="images/siemens-ag-logo.svg" /></div>
+        </div>
+
+        <!-- Single Mask for Transition -->
+        <div id="mask"></div>
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Elements
+        const mask = document.getElementById("mask");
+        const logo = document.getElementById("logo");
+
+        const frames = [
+            document.getElementById("frame1"),
+            document.getElementById("frame2"),
+            document.getElementById("frame3")
+        ];
+
+        const frame1Img = document.querySelector("#frame1 img");
+        const frame2Img = document.querySelector("#frame2 img");
+        const frame3Img = document.querySelector("#frame3 img");
+
+        const frame1Texts = [
+            document.getElementById("frame1-text1"),
+            document.getElementById("frame1-text2"),
+            document.getElementById("frame1-text3"),
+            document.getElementById("frame1-hashtag")
+        ];
+
+        // Frame 2 shares content/pos so we use its own references
+        const frame2Texts = [
+            document.getElementById("frame2-text1"),
+            document.getElementById("frame2-text2"),
+            document.getElementById("frame2-text3"),
+            document.getElementById("frame2-hashtag")
+        ];
+
+        const frame3Texts = [
+            document.getElementById("frame3-product"),
+            document.getElementById("frame3-headline"),
+            document.getElementById("frame3-copy"),
+            document.getElementById("frame3-cta")
+        ];
+
+        // Init
+        gsap.set(frames, { opacity: 0 });
+        gsap.set(frames[0], { opacity: 1 });
+
+        // Init Mask: Off Right
+        gsap.set(mask, { x: 970 });
+
+        // Init Text
+        gsap.set([...frame1Texts, ...frame2Texts, ...frame3Texts], { opacity: 0, x: 50 });
+
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 0, defaults: { ease: "power2.inOut" } });
+
+        tl
+            // --- Intro S1 ---
+            .to(frame1Texts, { duration: 0.6, opacity: 1, x: 0, stagger: 0.1 })
+            .to({}, { duration: 2.5 })
+
+            // --- Slide S1 -> S2 (Carousel) ---
+            .add(() => {
+                gsap.set(frames[1], { opacity: 1 });
+                gsap.set(frame2Img, { x: 970 }); // Start Right
+                gsap.set(frame1Texts, { opacity: 0 });
+                gsap.set(frame2Texts, { opacity: 1, x: 0 });
+            })
+            // Both slide Left
+            .to(frame1Img, { duration: 1.5, x: -970 })
+            .to(frame2Img, { duration: 1.5, x: -60 }, "<")
+
+            .set(frames[0], { opacity: 0 })
+            .to({}, { duration: 2.5 })
+
+            // --- Intro S3 (Complex Mask) ---
+            // 1. Mask In from RIGHT to Cover
+            .to(mask, { duration: 1.2, x: 0 })
+            .to(logo, { duration: 0.2, opacity: 0 }, "<+=0.8")
+
+            .add(() => {
+                gsap.set(frames[1], { opacity: 0 });
+                gsap.set(frames[2], { opacity: 1 });
+                gsap.set(frame3Img, { x: 970 }); // S3 Img starts Right
+            })
+
+            // 2. Reveal All (Mask moves further Left, Image In, Text In)
+            // Move mask to -485 (Left half covered, Right half open)
+            .to(mask, { duration: 1.2, x: -565 })
+            .to(frame3Img, { duration: 1.2, x: -80 }, "<")
+
+            // Sync Text Reveal
+            // User requested "at the same time". Stagger might delay it.
+            // If frame3-product is first, it appears, then others. 
+            // I will use stagger: 0 to make them appear truly simultaneously if that's the drift.
+            // Or keep small stagger for elegance but ensure image is included.
+            // The image is INSIDE frame3Texts[0].
+            .to(frame3Texts, { duration: 0.8, opacity: 1, x: 0, stagger: 0 }, "<+=0.2")
+            .to(logo, { duration: 0.4, opacity: 1 }, "<")
+
+            .to({}, { duration: 2.5 })
+
+            // --- Loop S3 -> S1 ---
+            .to(frame3Texts, { duration: 0.6, opacity: 0, x: -50, stagger: 0.05 }) // Fade Text Out
+            .add(() => {
+                gsap.set(frames[0], { opacity: 1 });
+                // "Slide in from the right" -> 970 to 0
+                gsap.set(frame1Img, { x: 970 });
+
+                // Text S1 Hidden
+                gsap.set(frame1Texts, { opacity: 0, x: -50 });
+            })
+            // Slide S3 Left away
+            .to(mask, { duration: 1.2, x: -1455 })
+            .to(frame3Img, { duration: 1.2, x: -970 }, "<")
+            // Slide S1 In from Left (Move Right)
+            .to(frame1Img, { duration: 1.2, x: 0 }, "<")
+
+            .set(mask, { x: 970 }); // Reset to Right
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="ad.size" content="width=970,height=250\" />
+  <title>consideration-m1-fi-970x250</title>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; }
+    #click-area {
+
+      border: 1px dashed #999;
+      box-sizing: border-box;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    #label { text-align: center; color: #333; font-size: 14px; padding: 8px; }
+    #label strong { display: block; font-size: 16px; margin-bottom: 4px; }
+  </style>
+  <script>
+    var clickTag = "https://example.com";
+    window.clickTag = window.clickTag || clickTag;
+
+    window.addEventListener("DOMContentLoaded", function () {
+      var clickArea = document.getElementById("click-area");
+      clickArea.addEventListener("click", function () {
+        var url = window.clickTag || clickTag;
+        window.open(url, "_blank");
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+  <div>
+      <strong>Consideration M1</strong>
+      FI  970x250
+    </div>
+  </div>
+</body>
+</html>
