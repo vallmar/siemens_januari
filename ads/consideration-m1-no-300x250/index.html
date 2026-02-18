@@ -321,7 +321,7 @@
       })
 
       // --- Slide2 image slides in from TOP covering TOP portion of mask ---
-      .to(frame3SlideImg, { duration: 1.2, y: 0 })
+      .to(frame3SlideImg, { duration: 1.2, y: 0 }, "<-.6")
 
       // Reveal text/cta on the mask (bottom portion)
       .to(frame3Texts, { duration: 0.8, opacity: 1, y: 0, stagger: 0.1 }, "<+=0.3")

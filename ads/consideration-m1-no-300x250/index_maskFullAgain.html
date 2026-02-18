@@ -308,8 +308,8 @@
 
       // --- Transition: Mask slides in from TOP to BOTTOM covering full frame ---
       .to(frame1Texts, { duration: 0.4, opacity: 0 }) // Fade out S1 text
-      .to(mask, { duration: 1.2, y: 0 }) // Mask covers full frame
-      .to(frame1Img, { duration: 1.2, y: 250 }, "<") // S1 image slieds away
+      .to(mask, { duration: 0.8, y: 0 }) // Mask covers full frame
+      .to(frame1Img, { duration: 0.8, y: 250 }, "<") // S1 image slieds away
       .to(logo, { duration: 0.2, opacity: 0 }, "<+=0.3") // Hide logo when mask covers
 
       // Switch to Frame 3 (hidden behind mask)
@@ -321,7 +321,7 @@
       })
 
       // --- Slide2 image slides in from TOP covering TOP portion of mask ---
-      .to(frame3SlideImg, { duration: 1.2, y: 0 })
+      .to(frame3SlideImg, { duration: 1.4, y: 0 }, "<-.6")
 
       // Reveal text/cta on the mask (bottom portion)
       .to(frame3Texts, { duration: 0.8, opacity: 1, y: 0, stagger: 0.1 }, "<+=0.3")
@@ -336,8 +336,6 @@
       // Slide2 image slides UP off-screen, revealing full mask underneath
       .to(frame3SlideImg, { duration: 1.0, y: -250 })
 
-      // Brief pause on full turquoise mask screen
-      .to({}, { duration: 0.4 })
 
       // Switch to Frame 1 behind the mask (invisible, positioned off-top)
       .add(() => {
@@ -348,7 +346,7 @@
       })
 
       // Slide1 image slides DOWN from top, pushing mask down and out
-      .to(frame1Img, { duration: 1.2, y: 0 })
+      .to(frame1Img, { duration: 1.2, y: 0 }, "<-.4")
       .to(mask, { duration: 1.2, y: 250 }, "<") // Mask exits downward simultaneously
       .to(logo, { duration: 0.4, opacity: 1 }, "<+=0.8")
 
