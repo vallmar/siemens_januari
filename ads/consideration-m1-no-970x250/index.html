@@ -84,6 +84,7 @@
       z-index: 20;
       color: #fff;
       font-size: 42px;
+      line-height: 1;
     }
 
     #frame3 .frame-text {
@@ -119,11 +120,11 @@
 
     #frame1-text2 {
       top: 88px;
-      left: 72px;
+      left: 102px;
     }
 
     #frame1-text3 {
-      top: 138px;
+      top: 133px;
       left: 50px;
     }
 
@@ -134,7 +135,7 @@
     #frame1-hashtag {
       top: 195px;
       left: 60px;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     /* Frame 3 elements - in the mask area (LEFT side, slide2 at right) */
@@ -159,14 +160,14 @@
     }
 
     #frame3-headline {
-      top: 38px;
-      left: 200px;
+      top: 30px;
+      left: 210px;
       font-size: 32px;
     }
 
     #frame3-copy {
-      top: 118px;
-      left: 200px;
+      top: 98px;
+      left: 210px;
       font-size: 14px;
       max-width: 270px;
       line-height: 20px;
@@ -174,7 +175,7 @@
 
     #frame3-cta {
       bottom: 26px;
-      left: 330px;
+      left: 340px;
     }
 
     /* Mask - Full Width, slides from RIGHT */
@@ -221,7 +222,7 @@
         <div id="frame1-text3" class="frame-text">
           <span class="turqiose-siemens">stekeovn iQ700</span>
         </div>
-        <div id="frame1-hashtag" class="frame-text">#IntelligensSomBegeistrer</div>
+        <div id="frame1-hashtag" class="frame-text">Intelligens som begeistrer</div>
       </div>
 
       <!-- Frame 3: Final Frame - Right: Slide2 image, Left: Mask with text/UGN -->
@@ -326,7 +327,7 @@
 
       // --- Slide2 image slides in from RIGHT, lands at right side of banner ---
       // Slide2 (484px wide) should end up positioned at x = 970 - 484 = 486 (right side)
-      .to(frame3SlideImg, { duration: 1.2, x: BANNER_W - SLIDE2_W })
+      .to(frame3SlideImg, { duration: 1.2, x: BANNER_W - SLIDE2_W }, "<-.6")
 
       // Reveal text/cta on the mask (left portion)
       .to(frame3Texts, { duration: 0.8, opacity: 1, x: 0, stagger: 0.1 }, "<+=0.3")

@@ -1,5 +1,5 @@
-﻿<!doctype html>
-<html lang=\"en\">
+﻿<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -8,48 +8,248 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 24px;
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 0 20px;
+      color: #333;
     }
 
-    ul {
-      columns: 2;
-      -webkit-columns: 2;
-      -moz-columns: 2;
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
-    li {
-      margin: 6px 0;
+    /* Accordion Styles */
+    .accordion {
+      background-color: #f7f7f7;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: left;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      outline: none;
+      transition: 0.4s;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .active,
+    .accordion:hover {
+      background-color: #eaeaea;
+    }
+
+    .accordion:after {
+      content: '\002B';
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      border: 1px solid #ddd;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .panel-content {
+      padding: 20px 0;
+    }
+
+    /* List item styles */
+    .banner-group {
+      margin-bottom: 24px;
+    }
+
+    .banner-group h3 {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+      color: #00bfb3;
+    }
+
+    .banner-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .banner-list li {
+      margin: 12px 0;
+    }
+
+    .banner-list a {
+      text-decoration: none;
+      color: #0078d4;
+      font-weight: 500;
+      padding: 6px 10px;
+      display: inline-block;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .banner-list a:hover {
+      background: #f0f8ff;
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
-  <h1>Banners Siemens Januari</h1>
-  <div style="display: flex; flex-direction: column;">
 
-    <a href="./ads/consideration-m1-no-300x250/index.html" target="_blank">Consideration 300x250 V1 TEST NORSKA</a>
-    <span>Tog norska pga såg ut att vara längst texter. Och 300x250 för gissar att den blir mest tight med
-      plats</span>
-  </div>
-  <div>
-    <a href="./ads/consideration-m1-no-300x250/index_maskFullAgain.html" target="_blank">Full maskning igen</a>
+  <h1>Siemens Januari Banners</h1>
 
+  <!-- Norwegian (NO) -->
+  <button class="accordion">Norska</button>
+  <div class="panel">
+    <div class="panel-content">
+      <div class="banner-group">
+        <h3>Consideration M1</h3>
+        <ul class="banner-list">
+          <li><a href="./ads/consideration-m1-no-160x600/index.html" target="_blank">160x600 Display</a></li>
+          <li><a href="./ads/consideration-m1-no-300x250/index.html" target="_blank">300x250 Display</a></li>
+          <li><a href="./ads/consideration-m1-no-300x600/index.html" target="_blank">300x600 Display</a></li>
+          <li><a href="./ads/consideration-m1-no-728x90/index.html" target="_blank">728x90 Display</a></li>
+          <li><a href="./ads/consideration-m1-no-970x250/index.html" target="_blank">970x250 Display</a></li>
+        </ul>
+      </div>
+      <div class="banner-group">
+        <h3>Consideration M2</h3>
+        <ul class="banner-list">
+          <li><a href="./ads/consideration-m2-no-160x600/index.html" target="_blank">160x600 Display</a></li>
+          <li><a href="./ads/consideration-m2-no-300x250/index.html" target="_blank">300x250 Display</a></li>
+          <li><a href="./ads/consideration-m2-no-300x600/index.html" target="_blank">300x600 Display</a></li>
+          <li><a href="./ads/consideration-m2-no-728x90/index.html" target="_blank">728x90 Display</a></li>
+          <li><a href="./ads/考虑ation-m2-no-970x250/index.html" target="_blank">970x250 Display</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <!-- <div>
-    <a href="./ads/consideration-m1-no-300x600/index.html" target="_blank">Consideration 300x600 V1 TEST NORSKA</a>
-    <span>Tog norska pga såg ut att vara längst texter. Och 300x250 för gissar att den blir mest tight med
-      plats</span>
+
+  <!-- Swedish (SV) -->
+  <button class="accordion">Svenska</button>
+  <div class="panel">
+    <div class="panel-content">
+      <div class="banner-group">
+        <h3>Consideration M1</h3>
+        <ul class="banner-list">
+          <li><a href="./ads/consideration-m1-sv-160x600/index.html" target="_blank">160x600 Display</a></li>
+          <li><a href="./ads/consideration-m1-sv-300x250/index.html" target="_blank">300x250 Display</a></li>
+          <li><a href="./ads/consideration-m1-sv-300x600/index.html" target="_blank">300x600 Display</a></li>
+          <li><a href="./ads/consideration-m1-sv-728x90/index.html" target="_blank">728x90 Display</a></li>
+          <li><a href="./ads/consideration-m1-sv-970x250/index.html" target="_blank">970x250 Display</a></li>
+        </ul>
+      </div>
+      <div class="banner-group">
+        <h3>Consideration M2</h3>
+        <ul class="banner-list">
+          <li><a href="./ads/consideration-m2-sv-160x600/index.html" target="_blank">160x600 Display</a></li>
+          <li><a href="./ads/consideration-m2-sv-300x250/index.html" target="_blank">300x250 Display</a></li>
+          <li><a href="./ads/consideration-m2-sv-300x600/index.html" target="_blank">300x600 Display</a></li>
+          <li><a href="./ads/consideration-m2-sv-728x90/index.html" target="_blank">728x90 Display</a></li>
+          <li><a href="./ads/consideration-m2-sv-970x250/index.html" target="_blank">970x250 Display</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div>
-    <a href="./ads/consideration-m1-no-728x90/index.html" target="_blank">Consideration 728x90 V1 TEST NORSKA</a>
-    <span>Tog norska pga såg ut att vara längst texter. Och 300x250 för gissar att den blir mest tight med
-      plats</span>
+
+  <!-- Danish (DK) -->
+  <button class="accordion">Danska</button>
+  <div class="panel">
+    <div class="panel-content">
+      <div class="banner-group">
+        <h3>Consideration M1</h3>
+        <ul class="banner-list">
+          <li><a href="./ads/consideration-m1-dk-160x600/index.html" target="_blank">160x600 Display</a></li>
+          <li><a href="./ads/consideration-m1-dk-300x250/index.html" target="_blank">300x250 Display</a></li>
+          <li><a href="./ads/consideration-m1-dk-300x600/index.html" target="_blank">300x600 Display</a></li>
+          <li><a href="./ads/consideration-m1-dk-728x90/index.html" target="_blank">728x90 Display</a></li>
+          <li><a href="./ads/consideration-m1-dk-970x250/index.html" target="_blank">970x250 Display</a></li>
+        </ul>
+      </div>
+      <div class="banner-group">
+        <h3>Consideration M2</h3>
+        <ul class="banner-list">
+          <li><a href="./ads/consideration-m2-dk-160x600/index.html" target="_blank">160x600 Display</a></li>
+          <li><a href="./ads/consideration-m2-dk-300x250/index.html" target="_blank">300x250 Display</a></li>
+          <li><a href="./ads/consideration-m2-dk-300x600/index.html" target="_blank">300x600 Display</a></li>
+          <li><a href="./ads/consideration-m2-dk-728x90/index.html" target="_blank">728x90 Display</a></li>
+          <li><a href="./ads/consideration-m2-dk-970x250/index.html" target="_blank">970x250 Display</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div>
-    <a href="./ads/consideration-m1-no-970x250/index.html" target="_blank">Consideration 970x250 V1 TEST NORSKA</a>
-    <span>Tog norska pga såg ut att vara längst texter. Och 300x250 för gissar att den blir mest tight med
-      plats</span>
-  </div> -->
+
+  <!-- Finnish (FI) -->
+  <button class="accordion">Finska</button>
+  <div class="panel">
+    <div class="panel-content">
+      <div class="banner-group">
+        <h3>Consideration M1</h3>
+        <ul class="banner-list">
+          <li><a href="./ads/consideration-m1-fi-160x600/index.html" target="_blank">160x600 Display</a></li>
+          <li><a href="./ads/consideration-m1-fi-300x250/index.html" target="_blank">300x250 Display</a></li>
+          <li><a href="./ads/consideration-m1-fi-300x600/index.html" target="_blank">300x600 Display</a></li>
+          <li><a href="./ads/consideration-m1-fi-728x90/index.html" target="_blank">728x90 Display</a></li>
+          <li><a href="./ads/consideration-m1-fi-970x250/index.html" target="_blank">970x250 Display</a></li>
+        </ul>
+      </div>
+      <div class="banner-group">
+        <h3>Consideration M2</h3>
+        <ul class="banner-list">
+          <li><a href="./ads/consideration-m2-fi-160x600/index.html" target="_blank">160x600 Display</a></li>
+          <li><a href="./ads/consideration-m2-fi-300x250/index.html" target="_blank">300x250 Display</a></li>
+          <li><a href="./ads/consideration-m2-fi-300x600/index.html" target="_blank">300x600 Display</a></li>
+          <li><a href="./ads/consideration-m2-fi-728x90/index.html" target="_blank">728x90 Display</a></li>
+          <li><a href="./ads/consideration-m2-fi-970x250/index.html" target="_blank">970x250 Display</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        // Close all other accordions to keep UI clean
+        var panels = document.getElementsByClassName("panel");
+        var buttons = document.getElementsByClassName("accordion");
+        for (var j = 0; j < panels.length; j++) {
+          if (buttons[j] !== this) {
+            buttons[j].classList.remove("active");
+            panels[j].style.maxHeight = null;
+          }
+        }
+
+        // Toggle current accordion
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+
+    // Open the first one by default
+    if (acc.length > 0) {
+      acc[0].click();
+    }
+  </script>
+
 </body>
 
 </html>

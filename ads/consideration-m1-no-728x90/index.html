@@ -84,6 +84,7 @@
       z-index: 20;
       color: #fff;
       font-size: 22px;
+      line-height: 1;
     }
 
     #frame3 .frame-text {
@@ -119,12 +120,12 @@
 
     #frame1-text2 {
       top: 12px;
-      left: 120px;
+      left: 112px;
     }
 
     #frame1-text3 {
-      top: 38px;
-      left: 68px;
+      top: 34px;
+      left: 44px;
       font-size: 20px;
     }
 
@@ -166,7 +167,7 @@
     }
 
     #frame3-copy {
-      top: 52px;
+      top: 32px;
       left: 100px;
       font-size: 10px;
       max-width: 240px;
@@ -174,8 +175,8 @@
     }
 
     #frame3-cta {
-      top: 50%;
-      left: 330px;
+      top: 65px;
+      left: 350px;
       transform: translateY(-50%) translateX(30px);
     }
 
@@ -223,7 +224,7 @@
         <div id="frame1-text3" class="frame-text">
           <span class="turqiose-siemens">stekeovn iQ700</span>
         </div>
-        <div id="frame1-hashtag" class="frame-text">#IntelligensSomBegeistrer</div>
+        <div id="frame1-hashtag" class="frame-text">Intelligens som begeistrer</div>
       </div>
 
       <!-- Frame 3: Final Frame - Right: Slide2 image, Left: Mask with text/UGN -->
@@ -328,7 +329,7 @@
 
       // --- Slide2 image slides in from RIGHT, lands at right side of banner ---
       // Slide2 (275px wide) should end up at x = 728 - 275 = 453 (right side)
-      .to(frame3SlideImg, { duration: 1.2, x: BANNER_W - SLIDE2_W })
+      .to(frame3SlideImg, { duration: 1.2, x: BANNER_W - SLIDE2_W }, "<-.6")
 
       // Reveal text/cta on the mask (left portion)
       .to(frame3Texts, { duration: 0.8, opacity: 1, x: 0, stagger: 0.1 }, "<+=0.3")

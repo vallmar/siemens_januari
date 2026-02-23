@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="no">
+<html lang="dk">
 
 <head>
   <style>
@@ -72,6 +72,7 @@
       top: 0;
       left: 0;
       z-index: 15;
+      min-width: 300px;
     }
 
     /* Text Layouts */
@@ -215,12 +216,12 @@
       <!-- Frame 1 -->
       <div class="frame" id="frame1">
         <img src="images/slide1.jpg" alt="Slide 1">
-        <div id="frame1-text1" class="frame-text">Oppdag</div>
+        <div id="frame1-text1" class="frame-text">Oplev</div>
         <div id="frame1-text2" class="frame-text">Siemens</div>
         <div id="frame1-text3" class="frame-text">
-          <span class="turqiose-siemens">stekeovn iQ700</span>
+          <span class="turqiose-siemens">iQ700 ovn</span>
         </div>
-        <div id="frame1-hashtag" class="frame-text">#IntelligensSomBegeistrer</div>
+        <div id="frame1-hashtag" class="frame-text">Intelligens som begejstrer</div>
       </div>
 
       <!-- Frame 3: Final Frame - Top: Slide2 image, Bottom: Mask with text/UGN -->
@@ -231,11 +232,11 @@
         <div id="frame3-product">
           <img src="images/UGN.jpg">
         </div>
-        <div id="frame3-headline" class="frame-text">Stekeovnen<br>iQ700</div>
+        <div id="frame3-headline" class="frame-text">iQ700<br>ovnen</div>
         <div id="frame3-copy" class="frame-text">
-          gjenkjenner og finjusterer<br>opptil 100 ulike matretter.
+          identificerer og finjusterer<br>op til 100 retter.
         </div>
-        <a href="#" id="frame3-cta" class="cta-button cta-button-dark">Les mer</a>
+        <a href="#" id="frame3-cta" class="cta-button cta-button-dark">Læs mere</a>
       </div>
 
       <!-- Logo -->
@@ -308,8 +309,8 @@
 
       // --- Transition: Mask slides in from TOP to BOTTOM covering full frame ---
       .to(frame1Texts, { duration: 0.4, opacity: 0 }) // Fade out S1 text
-      .to(mask, { duration: 0.8, y: 0 }) // Mask covers full frame
-      .to(frame1Img, { duration: 0.8, y: 250 }, "<") // S1 image slieds away
+      .to(mask, { duration: 1.2, y: 0 }) // Mask covers full frame
+      .to(frame1Img, { duration: 1.2, y: 250 }, "<") // S1 image slieds away
       .to(logo, { duration: 0.2, opacity: 0 }, "<+=0.3") // Hide logo when mask covers
 
       // Switch to Frame 3 (hidden behind mask)
@@ -321,7 +322,7 @@
       })
 
       // --- Slide2 image slides in from TOP covering TOP portion of mask ---
-      .to(frame3SlideImg, { duration: 1.4, y: 0 }, "<-.6")
+      .to(frame3SlideImg, { duration: 1.2, y: 0 }, "<-.6")
 
       // Reveal text/cta on the mask (bottom portion)
       .to(frame3Texts, { duration: 0.8, opacity: 1, y: 0, stagger: 0.1 }, "<+=0.3")
@@ -329,28 +330,25 @@
 
       .to({}, { duration: 2.5 })
 
-      // --- Loop: First cover screen with mask, then slide1 pushes mask away ---
+      // --- Loop: Mask + Slide2 image slide DOWN, Slide1 comes down from top ---
       .to(frame3Texts, { duration: 0.6, opacity: 0, y: 30, stagger: 0.05 })
       .to(logo, { duration: 0.3, opacity: 0 }, "<")
 
-      // Slide2 image slides UP off-screen, revealing full mask underneath
-      .to(frame3SlideImg, { duration: 1.0, y: -250 })
-
-
-      // Switch to Frame 1 behind the mask (invisible, positioned off-top)
       .add(() => {
-        gsap.set(frame3, { opacity: 0 });
         gsap.set(frame1, { opacity: 1 });
-        gsap.set(frame1Img, { y: -250 }); // Slide1 starts above
+
         gsap.set(frame1Texts, { opacity: 0, y: 30 });
       })
 
-      // Slide1 image slides DOWN from top, pushing mask down and out
-      .to(frame1Img, { duration: 1.2, y: 0 }, "<-.4")
-      .to(mask, { duration: 1.2, y: 250 }, "<") // Mask exits downward simultaneously
+      // Everything slides DOWN
+      .to(mask, { duration: 1.2, y: 250 })
+      .to(frame3SlideImg, { duration: 1.2, y: 250 }, "<")
+      // S1 image slides DOWN from top
+      .to(frame1Img, { duration: 1.2, y: 0 }, "<")
       .to(logo, { duration: 0.4, opacity: 1 }, "<+=0.8")
 
-      // Clean up for next loop iteration
+      .set(frame3, { opacity: 0 })
+      .set(frame1Img, { y: 0 })
       .set(mask, { y: -250 })
       .set(frame3SlideImg, { y: -250 });
 
